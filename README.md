@@ -1,3 +1,3 @@
 # cmsc389T-web-template
 
-Website Template for Project 5
+The custom change I made was add an additional section about one of my interests underneath the interests section.
