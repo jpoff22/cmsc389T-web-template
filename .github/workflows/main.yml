@@ -22,3 +22,17 @@ jobs:
           script: |
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
             git clone git@github.com:jpoff22/cmsc389T-web-template.git
+  job_two:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        uses: actions/checkout@v1
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          port: ${{secrets.PORT}}
+          script: |
+            unalias rm
+            rm -rf cmsc389T-web-template
