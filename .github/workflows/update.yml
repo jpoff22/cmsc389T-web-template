@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: clone workflow
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  job_one:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        uses: actions/checkout@v1
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          port: ${{secrets.PORT}}
+          script: |
+            unalias rm
+            rm -rf cmsc389T-web-template
